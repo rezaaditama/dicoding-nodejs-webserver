@@ -1,0 +1,12 @@
+{
+  "name": "dicoding-nodejs-webserver",
+  "version": "1.0.0",
+  "description": "Project ini merupakan bagian dari latihan Belajar Backend Pemula dengan Javascript yang diadakan oleh AWS dengan Dicoding. Pada bagian ini merupakan bagian dari modul Membangun Web Service Menggunakan Node JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node server.js"
+  },
+  "author": "Reza Aditama",
+  "license": "ISC"
+}
