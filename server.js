@@ -4,9 +4,20 @@ const port = 5000;
 const host = 'localhost';
 
 const requestListener = (request, response) => {
-  response.setHeader('Content-Type', 'text/html');
+  response.setHeader('Content-Type', 'aplication/json');
   response.statusCode = 200;
-  response.end('<h1>Halo HTTP Server!</h1>');
+
+  const { method } = request;
+  if (method === 'POST') {
+    let body = [];
+
+    request.on('data', (data) => body.push(data));
+    request.on('end', () => {
+      body = Buffer.concat(body).toString();
+      const { name } = JSON.parse(body);
+      response.end(`<h1>Hai, ${name}<h1>`);
+    });
+  }
 };
 
 const server = http.createServer(requestListener);
